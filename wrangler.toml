@@ -1,0 +1,6 @@
+name = "starfish"
+main = "worker.js"
+account_id = "aba139de5350b7bcdac454f043d1580b"  # find this in your Cloudflare dashboard
+workers_dev = true
+compatibility_date = "2024-09-25"
+
