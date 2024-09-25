@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import HeroBg from "../../assets/images/Rectangle.png";
 import HeroImage from "../../assets/images/hero.png";
