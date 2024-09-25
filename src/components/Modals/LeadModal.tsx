@@ -76,7 +76,7 @@ const LeadModal: React.FC = () => {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75"
           onClick={handleBackgroundClick}
         >
-          <div className="flex flex-col bg-[#19212A] w-1/2 font-rubik h-full md:max-w-4xl md:h-auto rounded-lg shadow-lg">
+          <div className="flex flex-col bg-[#19212A]    pt-4 xl:w-1/2 font-rubik h-auto md:max-w-4xl md:h-auto rounded-lg shadow-lg">
             {/* Modal Content */}
             <div className="flex justify-end mr-5">
               <button
