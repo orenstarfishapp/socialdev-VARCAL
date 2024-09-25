@@ -7,11 +7,13 @@ import FeatureCards from "../../components/HomePage/ServiceCards/FeatureCards/Fe
 import ContactSection from "../../components/HomePage/ContactSection/ContactSection";
 import ServiceTitle from "../../components/HomePage/ServiceTitle";
 import Services from "../../components/HomePage/ContactForm/Services";
+// import HebrewTyping from "../../components/HebrewTyping";
 
 const HomePage: React.FC = () => {
   return (
     <>
-      <Hero />
+        <Hero />
+      {/* <HebrewTyping/> */}
       <Services />
       <ServiceTitle />
       <ServiceCards />
