@@ -73,15 +73,19 @@ const services = [
 const ServiceCards: React.FC = () => {
   return (
     <section className="flex flex-col justify-center items-center w-full max-md:px-5 max-md:max-w-full">
-      <div className="flex flex-wrap flex-1 justify-center py-2.5 max-w-full h-full w-[1140px]">
+      {/* <div className="flex flex-wrap flex-1 justify-center py-2.5 max-w-full h-full w-[1140px]"> */}
+      <div className="grid  grid-cols-1 md:grid-cols-3">
         {services.map((service, index) => (
+          <div className={`col-span-1`} >
+
           <ServiceCard
             key={index}
             svgIcon={service.svgIcon}
             url={service.url}
             title={service.title}
             description={service.description}
-          />
+            />
+            </div>
         ))}
       </div>
     </section>

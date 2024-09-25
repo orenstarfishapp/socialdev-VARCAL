@@ -15,10 +15,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div
-      className={`flex flex-col mx-[15px] flex-1 shrink justify-center basis-0 p-[50px] min-w-[240px] rounded-xl shadow-custom-black ${backgroundColor} min-h-[556px] max-md:px-5 max-w-[350px] transform transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
+      className={`flex flex-col mx-[15px] flex-1 shrink justify-center mb-4 basis-0 p-[50px] min-w-[240px] rounded-xl shadow-custom-black ${backgroundColor} min-h-[556px] max-md:px-5 lg:max-w-[350px] transform transition-transform duration-300 hover:scale-105 hover:shadow-lg`}
     >
-      <div className="justify-center w-full max-w-[350px]">
-        <div className="w-full">
+      <div className="justify-center w-full max-w-full lg:max-w-[350px]">
+        <div className="w-full pr-4">
           <div dir="rtl" className="w-full mb-[35px]">
             <img
               loading="lazy"

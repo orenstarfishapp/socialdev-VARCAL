@@ -49,15 +49,19 @@ const featureData = [
 const FeatureCards: React.FC = () => {
   return (
     <section className="flex flex-col justify-center items-center w-full max-md:px-5 max-md:max-w-full">
-      <div className="flex flex-wrap flex-1 justify-center px-44 py-2.5 max-w-full h-full w-[1140px] max-md:px-5">
+      {/* <div className="flex flex-wrap flex-1 justify-center px-44 py-2.5 max-w-full h-full w-[1140px] max-md:px-5"> */}
+      <div className="grid grid-cols-1 md:grid-cols-2">
         {featureData.map((feature, index) => (
+          <div className={`col-span-1`} >
+
           <ServiceCard
             key={index}
             svgIcon={feature.svgIcon}
             url={feature.url}
             title={feature.title}
             description={feature.description}
-          />
+            />
+            </div>
         ))}
       </div>
     </section>

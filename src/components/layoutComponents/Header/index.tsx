@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         className="fixed px-[10px] w-full z-50 transition-colors shadow-custom-black duration-300 content-center"
         style={{ backgroundColor: bgColor, minHeight: "100px" }}
       >
-        <div className="container mx-auto my-0 flex-wrap flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center justify-between py-[10px] h-full">
+        <div className="container mx-auto mr-2 my-0 flex-wrap  pl-4  flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center justify-between py-[10px] h-full">
           <div className="flex-shrink-0 ml-5 w-[120px] h-[80px]">
             {" "}
             <Link to="/דף הבית">
@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
               />
             </Link>
           </div>
-          <div className=" relative xl:left-[250px] order-1">
+          <div className=" relative xl:left-[31rem] order-1">
             {/* Desktop Navigation */}
             <nav className="hidden md:flex flex-1 justify-center space-x-4">
               <ul className="flex items-center w-full justify-center">

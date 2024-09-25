@@ -52,9 +52,13 @@ const Services: React.FC = () => {
           </div>
         </p>
       </div>
-      <div className="flex mt-[30px] flex-wrap flex-1 justify-center py-2.5 mx-auto max-w-full h-full w-[1140px]">
+      {/* <div className="flex mt-[30px] flex-wrap flex-1 justify-center py-2.5 mx-auto max-w-full h-full w-[1140px]"> */}
+      <div className="grid grid-cols-1 md:grid-cols-3">
+
         {services.map((service, index) => (
+        <div className={`col-span-1`} >
           <ServiceCard key={index} {...service} />
+        </div>
         ))}
       </div>
     </section>

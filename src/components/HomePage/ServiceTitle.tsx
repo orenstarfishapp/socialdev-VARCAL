@@ -7,6 +7,8 @@ const ServiceTitle: React.FC = () => {
         <div className="flex flex-col justify-center w-full text-xs font-light leading-7 max-w-[1140px] max-md:max-w-full">
           <div className="flex flex-col flex-1 w-full max-md:max-w-full">
             <div className="w-full max-md:px-5 max-md:max-w-full">
+
+              
               שירותים מקצועיים
             </div>
           </div>
