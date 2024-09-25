@@ -22,5 +22,6 @@
   },
   "include": [
     "src/**/*"
-, "ContactForm/Services.tsx"  ]
+,"src/**/*.tsx", "src/react-typing-effect.d.ts", 
+"ContactForm/Services.tsx"  ]
 }
