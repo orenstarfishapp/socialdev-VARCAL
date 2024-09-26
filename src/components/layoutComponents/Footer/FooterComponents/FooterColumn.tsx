@@ -13,7 +13,7 @@ interface FooterColumnProps {
 
 const FooterColumn: React.FC<FooterColumnProps> = ({ title, items }) => {
   return (
-    <section className="flex flex-col grow shrink items-end px-5 text-right min-w-0 w-[25%]">
+    <section className="flex flex-col grow shrink items-end px-5 text-right   mt-4 md:mt-0 min-w-0 md:w-[25%]">
       <h2 className="flex flex-col justify-center w-full text-lg font-semibold leading-tight text-yellow-500 max-w-full">
         <span className="pb-px w-full">{title}</span>
       </h2>

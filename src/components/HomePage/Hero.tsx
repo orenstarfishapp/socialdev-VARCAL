@@ -46,13 +46,13 @@ const Hero: React.FC = () => {
         alt="Background image"
       /> */}
       <div className="flex  relative flex-col justify-center w-full text-6xl font-bold leading-tight text-center text-white max-md:max-w-full max-md:text-4xl">
-        <div className="flex flex-col flex-1 w-full max-md:max-w-full max-md:text-4xl">
+        <div className="flex flex-col mt-8 flex-1 w-full max-md:max-w-full max-md:text-4xl">
           <h2 className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
             איכות ללא פשרות
           </h2>
         </div>
       </div>
-      <div className="flex relative flex-col justify-center  h-[11rem] pb-11 mt-5 w-full text-2xl leading-none text-center text-white max-md:max-w-full">
+      <div className="flex relative flex-col justify-center   h-[5rem] md:h-[11rem] md:pb-11 mt-5 w-full text-2xl leading-none text-center text-white max-md:max-w-full">
         <div className="flex flex-col flex-1 w-full max-md:max-w-full">
           <div className="flex flex-col items-center px-20 pt-2 w-full max-md:px-5 max-md:max-w-full">
             <div className="flex flex-col max-w-full">

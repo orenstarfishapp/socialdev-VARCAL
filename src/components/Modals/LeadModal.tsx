@@ -9,20 +9,49 @@ const LeadModal: React.FC = () => {
     phone: "",
   });
   const [error, setError] = useState("");
-
+ const preventScroll = (e: TouchEvent) => {
+   e.preventDefault();
+ };
   useEffect(() => {
+    document.body.style.overflow = "hidden";
+    document.body.style.position = "fixed"; // Prevent scrolling by fixing the body's position
+    document.body.style.width = "100%"; // Maintain full body width
+
+    // Add touchmove event listener to prevent scrolling
+   
+    document.body.addEventListener("touchmove", preventScroll, {
+      passive: false,
+    });
+
     // Delay to show the modal (2 seconds for demonstration)
     const timer = setTimeout(() => {
       setIsVisible(true);
     }, 2000); // 2000ms = 2 seconds (adjust as needed)
 
-    // Cleanup the timer when component unmounts
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(timer);
+      document.body.style.overflow = ""; // Reset overflow
+      document.body.style.position = ""; // Reset position
+      document.body.style.width = ""; // Reset width
+      document.body.removeEventListener("touchmove", preventScroll); // Remove the touchmove event listener
+    };
   }, []);
+  
+
+    
+  
 
   // Close modal
   const closeModal = () => {
     setIsVisible(false);
+
+    // Reset body styles
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.width = "";
+
+    // Remove the touchmove event listener to restore scrolling
+    document.body.removeEventListener("touchmove", preventScroll);
   };
 
   // Handle input change
@@ -73,7 +102,7 @@ const LeadModal: React.FC = () => {
       {isVisible && (
         <div
           dir="ltr"
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75"
+          className="fixed overflow-hidden inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75"
           onClick={handleBackgroundClick}
         >
           <div className="flex flex-col bg-[#19212A]    font-rubik h-auto  md:h-auto rounded-lg shadow-lg">

@@ -35,7 +35,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         style={{ backgroundColor: bgColor, minHeight: "100px" }}
       >
         <div className="container mx-auto mr-2 my-0 flex-wrap  pl-4  flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center lg:justify-between py-[10px] h-full">
-          <div className="flex-shrink-0 ml-5 w-[120px] h-[80px]">
+          <div className="flex-shrink-0 md:ml-5 w-[120px] h-[80px]">
             {" "}
             <Link to="/דף הבית">
               {/* <img
