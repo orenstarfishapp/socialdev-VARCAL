@@ -34,16 +34,34 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         className="fixed px-[10px] w-full z-50 transition-colors shadow-custom-black duration-300 content-center"
         style={{ backgroundColor: bgColor, minHeight: "100px" }}
       >
-        <div className="container mx-auto mr-2 my-0 flex-wrap  pl-4  flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center justify-between py-[10px] h-full">
+        <div className="container mx-auto mr-2 my-0 flex-wrap  pl-4  flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center lg:justify-between py-[10px] h-full">
           <div className="flex-shrink-0 ml-5 w-[120px] h-[80px]">
             {" "}
             <Link to="/דף הבית">
-              <img
+              {/* <img
                 loading="lazy"
                 src={Logo}
                 className="object-contain w-full h-full"
                 alt="Company logo"
-              />
+              /> */}
+              <div className="object-contain w-full h-full">
+                <svg
+                  className={`text-white h-[6rem] w-24`}
+                  viewBox="0 0 100 100"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    className={`animate-bounce animate-duration-[4000ms]`}
+                    d="M20,80 Q40,40 60,20 Q80,40 60,80 Z"
+                    fill="#ff0000"
+                  />
+                  <path
+                    className={`animate-bounce animate-duration-[3900ms]`}
+                    d="M40,80 Q60,40 80,20 Q100,40 80,80 Z"
+                    fill="#cccccc"
+                  />
+                </svg>
+              </div>
             </Link>
           </div>
           <div className=" relative xl:left-[31rem] order-1">

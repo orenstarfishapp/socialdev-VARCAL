@@ -76,8 +76,7 @@ const LeadModal: React.FC = () => {
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black bg-opacity-75"
           onClick={handleBackgroundClick}
         >
-          <div className="flex flex-col bg-[#19212A]    pt-4 xl:w-1/2 font-rubik h-auto md:max-w-4xl md:h-auto rounded-lg shadow-lg">
-            {/* Modal Content */}
+          <div className="flex flex-col bg-[#19212A]   xl:w-1/2 font-rubik h-auto md:max-w-4xl md:h-auto rounded-lg shadow-lg">
             <div className="flex justify-end mr-5">
               <button
                 onClick={closeModal}
@@ -86,11 +85,11 @@ const LeadModal: React.FC = () => {
                 &times;
               </button>
             </div>
-            <div className="flex flex-col pb-[50px]">
-              <div className="flex flex-col w-[65%] mx-auto p-[10px] gap-5">
+            <div className="flex flex-col ">
+              <div className="flex flex-col w-[65%] mx-auto  gap-5">
                 <div className="flex flex-col text-center gap-5 mx-auto">
                   <h2 className="text-[12px] text-white text-end">צרו קשר</h2>
-                  <h2 className="text-[86px] font-rubik font-bold text-white text-end leading-[1.3em]">
+                  <h2 className="md:text-[86px] sm:text-[40px] text-[35px]   font-rubik font-bold text-white text-end md:leading-[1.3em]">
                     בואו נעבוד ביחד
                   </h2>
                   <h2 className="text-[24px] font-rubik font-normal text-white text-end">
@@ -98,7 +97,7 @@ const LeadModal: React.FC = () => {
                     בגוגל
                   </h2>
                   <div>
-                    <div className="p-[30px] rounded-[10px] shadow-custom-black">
+                    <div className="p-[30px] mb-8 rounded-[10px] shadow-custom-black">
                       <form className="mt-4" onSubmit={handleSubmit}>
                         <input type="hidden" name="post_id" value="4079" />
                         <input type="hidden" name="form_id" value="a181e66" />
