@@ -44,14 +44,10 @@ const LeadModal: React.FC = () => {
   // Close modal
   const closeModal = () => {
     setIsVisible(false);
-
-    // Reset body styles
-    document.body.style.overflow = "";
-    document.body.style.position = "";
-    document.body.style.width = "";
-
-    // Remove the touchmove event listener to restore scrolling
-    document.body.removeEventListener("touchmove", preventScroll);
+document.body.style.overflow = "auto"; // Reset overflow
+document.body.style.position = "auto"; // Reset position
+document.body.style.width = "auto"; // Reset width
+document.body.removeEventListener("touchmove", preventScroll); 
   };
 
   // Handle input change
