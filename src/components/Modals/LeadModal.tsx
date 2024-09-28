@@ -30,7 +30,7 @@ const LeadModal: React.FC = () => {
 
     return () => {
       clearTimeout(timer);
-      document.body.style.overflow = ""; // Reset overflow
+      document.body.style.overflow = "scroll";// Reset overflow
       document.body.style.position = ""; // Reset position
       document.body.style.width = ""; // Reset width
       document.body.removeEventListener("touchmove", preventScroll); // Remove the touchmove event listener
@@ -44,7 +44,7 @@ const LeadModal: React.FC = () => {
   // Close modal
   const closeModal = () => {
     setIsVisible(false);
-document.body.style.overflow = "auto"; // Reset overflow
+document.body.style.overflow = "scroll"; // Reset overflow
 document.body.style.position = "auto"; // Reset position
 document.body.style.width = "auto"; // Reset width
 document.body.removeEventListener("touchmove", preventScroll); 
