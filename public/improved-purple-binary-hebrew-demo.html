@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>איכות ללא פשרות - הדגמה משופרת</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
+        
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Heebo', sans-serif;
+            background: linear-gradient(135deg, #4a0080 0%, #9900cc 100%);
+            color: #ffffff;
+            overflow: hidden;
+        }
+        
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><text x="0" y="20" fill="rgba(255,255,255,0.05)" font-size="20">01</text></svg>');
+            opacity: 0.5;
+            z-index: -1;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 2rem;
+            box-sizing: border-box;
+        }
+        
+        h1 {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        #typed-text {
+            font-size: 2rem;
+            min-height: 4rem;
+            margin-bottom: 2rem;
+            color: #ffcd3c;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        
+        .typed-cursor {
+            opacity: 1;
+            animation: blink 0.7s infinite;
+            color: #ffcd3c;
+        }
+        
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        
+        .shine {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .shine::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container shine">
+        <h1>איכות ללא פשרות</h1>
+        <div id="typed-text"></div>
+    </div>
+
+    <script>
+    class AdvancedHebrewTyping {
+        constructor(element, options) {
+            this.element = typeof element === 'string' ? document.querySelector(element) : element;
+            this.options = {
+                strings: [
+                    'קידום מותאם אישית: אתר אינטרנט',
+                    'קידום מותאם אישית: אינסטגרם',
+                    'קידום מותאם אישית: פייסבוק',
+                    'תתחיל כאן ותן לעסק שלך להבלט'
+                ],
+                typeSpeed: 50,
+                backSpeed: 30,
+                backDelay: 2000,
+                startDelay: 500,
+                loop: true,
+                showCursor: true,
+                cursorChar: '|',
+                onComplete: (self) => {},
+                preStringTyped: (arrayPos, self) => {},
+                onStringTyped: (arrayPos, self) => {},
+                ...options
+            };
+
+            this.isTyping = false;
+            this.currentStringIndex = 0;
+            this.init();
+        }
+
+        init() {
+            this.createCursor();
+            this.start();
+        }
+
+        createCursor() {
+            if (this.options.showCursor) {
+                this.cursor = document.createElement('span');
+                this.cursor.className = 'typed-cursor';
+                this.cursor.innerHTML = this.options.cursorChar;
+                this.element.parentNode.insertBefore(this.cursor, this.element.nextSibling);
+            }
+        }
+
+        start() {
+            this.typeNextString();
+        }
+
+        typeNextString() {
+            if (this.currentStringIndex >= this.options.strings.length) {
+                if (this.options.loop) {
+                    this.currentStringIndex = 0;
+                } else {
+                    this.options.onComplete(this);
+                    return;
+                }
+            }
+
+            const currentString = this.options.strings[this.currentStringIndex];
+            this.options.preStringTyped(this.currentStringIndex, this);
+            this.typeString(currentString);
+        }
+
+        typeString(str) {
+            let i = 0;
+            this.isTyping = true;
+
+            const type = () => {
+                if (i < str.length) {
+                    this.element.innerHTML += str.charAt(i);
+                    i++;
+                    setTimeout(type, this.options.typeSpeed);
+                } else {
+                    this.isTyping = false;
+                    this.options.onStringTyped(this.currentStringIndex, this);
+                    setTimeout(() => this.backspace(str), this.options.backDelay);
+                }
+            };
+
+            setTimeout(type, this.options.startDelay);
+        }
+
+        backspace(str) {
+            if (this.options.loop || this.currentStringIndex < this.options.strings.length - 1) {
+                let i = str.length;
+                const backspace = () => {
+                    if (i > 0) {
+                        this.element.innerHTML = str.substring(0, i - 1);
+                        i--;
+                        setTimeout(backspace, this.options.backSpeed);
+                    } else {
+                        this.currentStringIndex++;
+                        this.typeNextString();
+                    }
+                };
+                backspace();
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        new AdvancedHebrewTyping('#typed-text', {
+            strings: [
+                'קידום מותאם אישית: אתר אינטרנט',
+                'קידום מותאם אישית: אינסטגרם',
+                'קידום מותאם אישית: פייסבוק',
+                'תתחיל כאן ותן לעסק שלך להבלט'
+            ],
+            typeSpeed: 50,
+            backSpeed: 30,
+            backDelay: 2000,
+            startDelay: 500,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|',
+            onStringTyped: (arrayPos, self) => {
+                console.log(`סיים להקליד מחרוזת ${arrayPos + 1}`);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

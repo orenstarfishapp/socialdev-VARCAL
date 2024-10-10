@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.612befdd.css",
+    "main.js": "/static/js/main.91eb6e31.js",
+    "static/js/453.f7be5b23.chunk.js": "/static/js/453.f7be5b23.chunk.js",
+    "static/media/Blue-Yellow-3D-Happy-World-Wide-Web-Instagram-Story-768x1365.png.png": "/static/media/Blue-Yellow-3D-Happy-World-Wide-Web-Instagram-Story-768x1365.png.4f5aa5d77fca5480fefc.png",
+    "static/media/screencapture-yoniyosha-co-il-2023-07-27-14_08_16-1.png": "/static/media/screencapture-yoniyosha-co-il-2023-07-27-14_08_16-1.fefadc2fb0d5eb958b5a.png",
+    "static/media/hero.png": "/static/media/hero.49c4027622be3744e24c.png",
+    "static/media/social-networks-marketing-2.png.png": "/static/media/social-networks-marketing-2.png.5133d4184c24362e304c.png",
+    "static/media/contact-settion-logo.png": "/static/media/contact-settion-logo.9aa550a820b17e2fc979.png",
+    "static/media/Background.png": "/static/media/Background.75465f1646041de45d95.png",
+    "index.html": "/index.html",
+    "main.612befdd.css.map": "/static/css/main.612befdd.css.map",
+    "main.91eb6e31.js.map": "/static/js/main.91eb6e31.js.map",
+    "453.f7be5b23.chunk.js.map": "/static/js/453.f7be5b23.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.612befdd.css",
+    "static/js/main.91eb6e31.js"
+  ]
+}
