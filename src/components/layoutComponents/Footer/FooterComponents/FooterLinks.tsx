@@ -13,7 +13,7 @@ const footerData = [
   {
     title: "עיצוב אתרים",
     items: [
-      { title: "עיצוב UI/UX", url: "עיצוב UI/UX" },
+      { title: "עיצוב UI/UX", url: "עיצוב UIUX" },
       { title: "עיצוב ממשק משתמש", url: "עיצוב ממשק משתמש" },
       { title: "עיצוב אפליקציות", url: "עיצוב אפליקציות" },
     ],
