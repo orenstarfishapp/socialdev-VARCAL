@@ -88,31 +88,35 @@ interface PricingPlanProps {
   title: string;
   price: number;
   features: string[];
-  icon: React.ComponentType<{ className?: string }>; // Allow className as a prop
+  icon: React.ComponentType<{ className?: string }>;
   color: string;
+  accentColor: string;
 }
 
-const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon: Icon, color }) => (
-  <div className={`flex flex-col p-6 mx-auto max-w-lg text-center text-gray-900 bg-white rounded-lg border border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300 xl:p-8 ${color}`}>
-    <div className="flex justify-center mb-4">
-      <Icon className="w-12 h-12" />
+const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon: Icon, color, accentColor }) => (
+  <div className={`flex flex-col p-8 mx-auto w-full max-w-lg text-right bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden ${color}`}>
+    <div className={`absolute top-0 right-0 w-20 h-20 ${accentColor} transform rotate-45 translate-x-8 -translate-y-8`}></div>
+    <div className="relative">
+      <div className="flex items-center mb-6">
+        <Icon className={`w-10 h-10 ml-4 ${accentColor} p-2 rounded-full`} />
+        <h3 className="text-2xl font-bold text-gray-800">{title}</h3>
+      </div>
+      <div className="flex items-baseline mb-8">
+        <span className="text-5xl font-extrabold text-gray-900">₪{price}</span>
+        <span className="mr-2 text-xl text-gray-500">/חודש</span>
+      </div>
+      <ul className="mb-8 space-y-4">
+        {features.map((feature, index) => (
+          <li key={index} className="flex items-center">
+            <Check className={`flex-shrink-0 w-6 h-6 ml-3 ${accentColor}`} />
+            <span className="text-gray-700">{feature}</span>
+          </li>
+        ))}
+      </ul>
+      <button className={`w-full py-3 px-6 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${accentColor}`}>
+        בחר תוכנית
+      </button>
     </div>
-    <h3 className="mb-4 text-2xl font-bold">{title}</h3>
-    <div className="flex justify-center items-baseline my-8">
-      <span className="mr-2 text-5xl font-extrabold">₪{price}</span>
-      <span className="text-gray-500">/חודש</span>
-    </div>
-    <ul role="list" className="mb-8 space-y-4 text-right">
-      {features.map((feature, index) => (
-        <li key={index} className="flex items-center space-x-3">
-          <Check className="flex-shrink-0 w-5 h-5 text-green-500" />
-          <span>{feature}</span>
-        </li>
-      ))}
-    </ul>
-    <button className="mt-auto bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-200 font-medium rounded-lg text-sm px-5 py-2.5 text-center text-white transition-colors duration-300">
-      בחר תוכנית
-    </button>
   </div>
 );
 
@@ -120,52 +124,54 @@ const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon:
 const PricingPlans: React.FC = () => {
   const plans = [
     {
-      title: "חבילת פיתוח אתרים",
-      price: 400,
+      title: "חבילת קידום סוציאל",
+      price: 500,
       features: [
-        "בניית אתר מותאם אישית",
-        "עיצוב רספונסיבי",
-        "אופטימיזציה ל-SEO בסיסי",
-        "תמיכה טכנית"
-      ],
-      icon: Globe,
-      color: "bg-gradient-to-br from-blue-50 to-blue-100"
-    },
-    {
-      title: "סושיאל פלוס קידום אתרים",
-      price: 600,
-      features: [
-        "ניהול רשתות חברתיות",
-        "קידום אתר וקישורים",
-        "יצירת תוכן שבועי",
-        "ניתוח ביצועים",
-        "קידום ממומן בסיסי"
+        "העלאת ועריכת שני פוסטים בשבוע",
+        "סרטון אחד",
+        "קידום רשת חברתית",
+        "כלי ניהול מתקדמים"
       ],
       icon: Share2,
-      color: "bg-gradient-to-br from-purple-50 to-purple-100"
+      color: "bg-gradient-to-br from-blue-50 to-blue-100",
+      accentColor: "text-blue-600"
     },
     {
-      title: "פרימיום אול-אין-וואן",
-      price: 800,
+      title: "חבילת קידום וWeb",
+      price: 650,
+      features: [
+        "כל התכונות של החבילה הקודמת",
+        "בניית אתר בטכנולוגיות חדשניות",
+        "קידום חודשי",
+        "אופטימיזציה"
+      ],
+      icon: Globe,
+      color: "bg-gradient-to-br from-purple-50 to-purple-100",
+      accentColor: "text-purple-600"
+    },
+    {
+      title: "חבילת פרימיום",
+      price: 899,
       features: [
         "כל התכונות של החבילות הקודמות",
-        "אסטרטגיית שיווק דיגיטלי מקיפה",
-        "קמפיינים ממומנים מתקדמים",
-        "אופטימיזציה מתמדת",
-        "דוחות ביצועים שבועיים"
+        "תמיכה 24/7",
+        "דוחות חודשיים",
+        "מידע מתקדם",
+        "ניתוח עסקי"
       ],
       icon: Zap,
-      color: "bg-gradient-to-br from-yellow-50 to-yellow-100"
+      color: "bg-gradient-to-br from-yellow-50 to-yellow-100",
+      accentColor: "text-yellow-600"
     }
   ];
 
   return (
-    <div className="py-12 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
-      <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-        <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900">תוכניות קידום ופיתוח אתרים</h2>
-        <p className="mb-5 font-light text-gray-600 sm:text-xl">בחר את התוכנית המושלמת להצלחת העסק הדיגיטלי שלך</p>
+    <div dir="rtl" className="py-16 px-4 mx-auto max-w-screen-xl bg-gray-50">
+      <div className="mx-auto max-w-screen-md text-center mb-12">
+        <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-gray-900">תוכניות קידום ופיתוח אתרים</h2>
+        <p className="mb-5 font-light text-xl text-gray-600">בחר את התוכנית המושלמת להצלחת העסק הדיגיטלי שלך</p>
       </div>
-      <div className="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {plans.map((plan, index) => (
           <PricingPlan key={index} {...plan} />
         ))}
