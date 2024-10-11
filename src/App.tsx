@@ -38,7 +38,7 @@ const App: React.FC = () => {
           />
           <Route path="/בניית אתר מסחר" element={<BuildTradingSite />} />
           <Route path="בניית אתר חדש" element={<BuildPortalSite />} />
-          <Route path="/עיצוב אתרים" element={<WebDesignPage />} />
+          {/* <Route path="/עיצוב אתרים" element={<WebDesignPage />} /> */}
           <Route path="/עיצוב UI/UX" element={<UIdesignPage />} />
           <Route path="/עיצוב ממשק משתמש" element={<InterfaceDesignPage />} />
           <Route path="/עיצוב אפליקציות" element={<AppDesignPage />} />
