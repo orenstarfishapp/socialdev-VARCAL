@@ -2,6 +2,7 @@ import React from "react";
 import PortfolioItem from "./PortfolioItem";
 import PortfolioPicture from "../../assets/images/screencapture-yoniyosha-co-il-2023-07-27-14_08_16-1.png";
 import ExplorerImage from "../../assets/images/explorer_gaEmeYI7Ic.png"; // Update this line
+import SallonImage from "../../assets/images/sallonmary_portfolio.png";
 
 const Portfolio: React.FC = () => {
   return (
@@ -24,7 +25,13 @@ const Portfolio: React.FC = () => {
           />
         </div>
         <div className={`col-span-1`}>
-          <div className="flex flex-1 shrink rounded-xl bg-gray-950 p-[30px] " />
+          <a href="https://sallonmary.co.il/" target="_blank" rel="noopener noreferrer">
+            <PortfolioItem
+              name="Sallon"
+              title=""
+              imageSrc={SallonImage}
+            />
+          </a>
         </div>
       </div>
     </section>
