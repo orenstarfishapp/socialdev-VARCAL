@@ -1,45 +1,50 @@
-import React from "react";
-import ContactForm from "./ContactForm";
+import React from 'react';
+import { Play, Smile } from 'lucide-react';
 
-const Testimonials: React.FC = () => {
+const Testimonials = () => {
+  const testimonials = [
+    { name: 'שם לקוח 1', image: '/api/placeholder/150/150', role: 'תפקיד 1' },
+    { name: 'שם לקוח 2', image: '/api/placeholder/150/150', role: 'תפקיד 2' },
+    { name: 'שם לקוח 3', image: '/api/placeholder/150/150', role: 'תפקיד 3' },
+    { name: 'שם לקוח 4', image: '/api/placeholder/150/150', role: 'תפקיד 4' },
+    { name: 'שם לקוח 5', image: '/api/placeholder/150/150', role: 'תפקיד 5' },
+    { name: 'שם לקוח 6', image: '/api/placeholder/150/150', role: 'תפקיד 6' },
+  ];
+
   return (
-    <section className="flex flex-col justify-center items-center  w-full max-md:max-w-full">
-      <div className="flex flex-1 grow shrink justify-center flex-row py-[50px] my-0 mx-auto max-w-[1140px] w-full size-full">
-        <ContactForm />
-        <div className="flex flex-col grow shrink justify-start gap-[20px] p-[10px] ml-[60px] w-1/2 max-md:max-w-full">
-          <h2 className="flex flex-col justify-center w-full text-5xl font-bold leading-tight text-right text-cyan-400 max-w-[559px] max-md:max-w-full max-md:text-4xl">
-            מה אומרים עלינו
-          </h2>
-          <div className=" text-right mb-[-18px]">
-            <div className="flex max-w-full flex-col flex-grow">
-              <div className="min-h-[20px] text-message flex w-full flex-col items-end gap-2 break-words [.text-message+&]:mt-5 overflow-x-auto whitespace-normal">
-                <div className="flex w-full flex-col gap-1 empty:hidden first:pt-[3px]">
-                  <div className="markdown prose w-full break-words dark:prose-invert light">
-                    <p className="flex flex-col justify-center mt-5 w-full max-w-[559px] max-md:max-w-full text-base leading-7 text-right text-zinc-950">
-                      המוטיבציה, הרצון והטכנולוגיה שלנו מובילים לתוצאות מדהימות.
-                      ביחד נשיג את מה שנראה בלתי אפשרי! <br />
-                      השאירו את הפרטים שלכם, ונחזור אליכם בהקדם.
-                    </p>
+    <div className="bg-gradient-to-b from-navy-900 to-navy-800 text-white p-8 text-right min-h-screen" dir="rtl">
+      <div className="max-w-6xl mx-auto">
+        <h1 className="text-5xl font-bold mb-12 leading-tight">
+          <span className="text-yellow-400 block">אך עשינו את זה?</span>
+          <span className="bg-white text-navy-900 px-4 py-2 rounded-full inline-block transform -skew-x-12 my-2">תשמע</span>
+          <span className="text-orange-500 block">שמע מהלקוחות המרוצים שלנו!</span>
+        </h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="bg-navy-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+              <div className="relative aspect-video">
+                <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                  <div className="w-16 h-16 bg-red-500 rounded-full flex items-center justify-center cursor-pointer transition-transform duration-300 hover:scale-110">
+                    <Play className="text-white" size={32} />
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="mt-1 flex gap-3 empty:hidden -ml-2">
-              <div className="items-center justify-start rounded-xl p-1 flex">
-                <div className="flex items-center">
-                  <div className="flex"></div>
-                  <div className="flex items-center pb-0">
-                    <div className="[&_svg]:h-full [&_svg]:w-full icon-md h-4 w-4">
-                      &nbsp;
-                    </div>
-                  </div>
-                </div>
+              <div className="p-4">
+                <h2 className="text-xl font-semibold">{testimonial.name}</h2>
+                <p className="text-yellow-400">{testimonial.role}</p>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <button className="bg-yellow-400 text-navy-900 px-8 py-3 rounded-full text-lg font-bold flex items-center mx-auto hover:bg-yellow-300 transition-colors duration-300">
+            <Smile className="mr-2" />
+            צפה בעוד סיפורי הצלחה
+          </button>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 
