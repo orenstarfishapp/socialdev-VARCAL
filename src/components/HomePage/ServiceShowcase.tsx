@@ -166,7 +166,7 @@ const PricingPlans: React.FC = () => {
   ];
 
   return (
-    <div dir="rtl" className="py-16 px-4 mx-auto max-w-screen-xl bg-gray-50">
+    <div dir="rtl" className="py-16 px-4 mx-auto max-w-screen-xl">
       <div className="mx-auto max-w-screen-md text-center mb-12">
         <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-gray-900">תוכניות קידום ופיתוח אתרים</h2>
         <p className="mb-5 font-light text-xl text-gray-600">בחר את התוכנית המושלמת להצלחת העסק הדיגיטלי שלך</p>
