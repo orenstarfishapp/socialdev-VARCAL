@@ -19,7 +19,6 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <>
-      <LeadModal />
       <div className="relative bg-[linear-gradient(0deg,#D6DCE4_0%,#D6DCE4_100%,#FFF)]">
         <div className="z-0 w-full min-h-[1200px] max-md:max-w-full">
           <Header navItems={navItems} />
