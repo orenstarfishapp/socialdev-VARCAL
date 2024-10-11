@@ -16,7 +16,7 @@ const Testimonials = () => {
       <div className="max-w-6xl mx-auto">
         <h1 className="text-5xl font-bold mb-12 leading-tight">
           <span className="text-yellow-400 block">אך עשינו את זה?</span>
-          <span className="bg-white text-navy-900 px-4 py-2 rounded-full inline-block transform -skew-x-12 my-2">תשמע</span>
+          <span className="bg-blue-600 text-white px-4 py-2 rounded-full inline-block transform -skew-x-12 my-2">תשמע</span>
           <span className="text-orange-500 block">שמע מהלקוחות המרוצים שלנו!</span>
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
