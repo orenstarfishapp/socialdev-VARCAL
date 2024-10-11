@@ -19,11 +19,13 @@ const Portfolio: React.FC = () => {
           </a>
         </div>
         <div className={`col-span-1`}>
-          <PortfolioItem
-            name="Yonatan Yoshua"
-            title="בפסיכולוגיה,לוגותרפיסט"
-            imageSrc={PortfolioPicture}
-          />
+          <a href="https://yoniyosha.co.il/" target="_blank" rel="noopener noreferrer">
+            <PortfolioItem
+              name="Yonatan Yoshua"
+              title="בפסיכולוגיה,לוגותרפיסט"
+              imageSrc={PortfolioPicture}
+            />
+          </a>
         </div>
         <div className={`col-span-1`}>
           <a href="https://sallonmary.co.il/" target="_blank" rel="noopener noreferrer">
