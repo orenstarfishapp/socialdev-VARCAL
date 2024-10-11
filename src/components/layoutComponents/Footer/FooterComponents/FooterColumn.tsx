@@ -29,6 +29,17 @@ const FooterColumn: React.FC<FooterColumnProps> = ({ title, items }) => {
             >
               <Link
                 to={item.url}
+                onClick={(e) => {
+                  e.preventDefault(); // Prevent the default link behavior
+                  window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // Smooth scroll
+                  });
+                  setTimeout(() => {
+                    // Navigate after scrolling
+                    window.location.href = item.url; // Replace with your routing method if using React Router
+                  }, 300); // Adjust timing as needed
+                }}
                 className="relative flex flex-1 shrink items-center self-stretch my-auto w-full basis-0 group-hover:text-yellow-500 transition-colors duration-300"
               >
                 <span className="self-stretch pb-px my-auto">{item.title}</span>
