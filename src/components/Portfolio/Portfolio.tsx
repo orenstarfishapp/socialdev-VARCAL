@@ -3,6 +3,7 @@ import PortfolioItem from "./PortfolioItem";
 import PortfolioPicture from "../../assets/images/screencapture-yoniyosha-co-il-2023-07-27-14_08_16-1.png";
 import ExplorerImage from "../../assets/images/explorer_gaEmeYI7Ic.png"; // Update this line
 import SallonImage from "../../assets/images/sallonmary_portfolio.png";
+import BarberImage from "../../assets/images/image_2024_10_11T14_09_58_211Z.png";
 
 const Portfolio: React.FC = () => {
   return (
@@ -32,6 +33,13 @@ const Portfolio: React.FC = () => {
               imageSrc={SallonImage}
             />
           </a>
+        </div>
+        <div className={`col-span-1`}>
+          <PortfolioItem
+            name="Barber"
+            title=""
+            imageSrc={BarberImage}
+          />
         </div>
       </div>
     </section>
