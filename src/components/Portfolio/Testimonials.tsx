@@ -12,8 +12,8 @@ const Testimonials = () => {
   ];
 
   return (
-    <div className="bg-gradient-to-b from-navy-900 to-navy-800 text-white p-8 text-right min-h-screen" dir="rtl">
-      <div className="max-w-6xl mx-auto">
+    <div className="bg-gradient-to-b from-navy-900 to-navy-800 text-white p-8 text-right min-h-screen flex items-center justify-center" dir="rtl">
+      <div className="max-w-6xl mx-auto text-center">
         <h1 className="text-5xl font-bold mb-12 leading-tight">
           <span className="text-yellow-400 block">אך עשינו את זה?</span>
           <span className="bg-blue-600 text-white px-4 py-2 rounded-full inline-block transform -skew-x-12 my-2">תשמע</span>
@@ -21,7 +21,11 @@ const Testimonials = () => {
         </h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="bg-navy-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105">
+            <div
+              key={index}
+              className="bg-navy-700 rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:scale-105 mx-auto" // Center the item
+              style={{ width: '350px' }} // Set a fixed width
+            >
               <div className="relative aspect-video">
                 <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
                 <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
@@ -37,6 +41,7 @@ const Testimonials = () => {
             </div>
           ))}
         </div>
+
         <div className="mt-12 text-center">
           <button className="bg-yellow-400 text-navy-900 px-8 py-3 rounded-full text-lg font-bold flex items-center mx-auto hover:bg-yellow-300 transition-colors duration-300">
             <Smile className="mr-2" />
