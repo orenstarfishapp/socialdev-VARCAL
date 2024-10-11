@@ -10,7 +10,7 @@ const LeadModal: React.FC = () => {
   });
   const [error, setError] = useState("");
  const preventScroll = (e: TouchEvent) => {
-   e.preventDefault();
+   //e.preventDefault();
  };
   useEffect(() => {
     document.body.style.overflow = "hidden";
