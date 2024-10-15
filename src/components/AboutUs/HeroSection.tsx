@@ -24,7 +24,7 @@ const HeroSection: React.FC = () => {
           גלה את הסיפור שלנו ואת המחויבות שלנו לעסקים קטנים ובינוניים
         </p>
         <button className="mt-8 px-8 py-3 bg-purple-600 text-white font-semibold rounded-full hover:bg-purple-700 transition duration-300 ease-in-out transform hover:scale-105 animate-fade-in-up">
-          קרא עוד
+          קרא עוד מידע
         </button>
       </div>
     </section>
