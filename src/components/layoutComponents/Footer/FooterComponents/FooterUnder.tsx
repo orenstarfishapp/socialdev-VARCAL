@@ -6,7 +6,7 @@ const FooterUnder: React.FC = () => {
       <div className="flex flex-col flex-1 justify-center mx-auto py-[100px] max-w-[1140px] w-full">
         <div className="flex flex-col flex-1 w-full max-md:max-w-full">
           <div className="w-full max-md:px-5 max-md:max-w-full">
-            © 2023 Social Dev | כל הזכויות שמורות
+            © 2023 | כל הזכויות שמורות
           </div>
         </div>
       </div>
