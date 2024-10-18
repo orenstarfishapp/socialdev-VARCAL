@@ -1,3 +1,6 @@
+--------- DO NOT DELETE : we turn off the droplet and digitalocean, than we disconnect the domain www.aiwebdev.co.il within the droplet:starfishapp.---------------
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
