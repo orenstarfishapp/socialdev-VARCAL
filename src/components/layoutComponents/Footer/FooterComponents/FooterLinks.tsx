@@ -8,6 +8,7 @@ const footerData = [
       { title: "קידום ב-Facebook", url: "קידום ב-Facebook" },
       { title: "קידום ב-Instagram", url: "קידום ב-Instagram" },
       { title: "קידום ב-Tik Tok", url: "קידום ב-Tik Tok" },
+      { title: "דף מספר 4", url: "דף מספר 4" },
     ],
   },
   {
@@ -16,6 +17,7 @@ const footerData = [
       { title: "עיצוב UI/UX", url: "עיצוב UIUX" },
       { title: "עיצוב ממשק משתמש", url: "עיצוב ממשק משתמש" },
       { title: "עיצוב אפליקציות", url: "עיצוב אפליקציות" },
+      { title: "דף מספר שלוש", url: "דף מספר שלוש" },
     ],
   },
   {
@@ -25,6 +27,7 @@ const footerData = [
       { title: "בניית אתר תדמית", url: "/בניית אתר תדמית" },
       { title: "בניית אתר מסחר", url: "בניית אתר מסחר" },
       { title: "בניית אתר חדש", url: "בניית אתר חדש" },
+      { title: "דף מספר שתים", url: "דף מספר שתים" },
     ],
   },
 ];
