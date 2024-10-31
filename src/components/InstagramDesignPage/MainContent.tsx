@@ -1,93 +1,210 @@
 import React from "react";
-// import SocialImg from "../../assets/images/social-networks-marketing-2.png.png";
-
-const SectionTitle = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="text-4xl md:text-5xl font-bold text-[#F7BA00] font-rubik leading-tight mb-8">
-    {children}
-  </h2>
-);
-
-const ContentBlock = ({ title, items }: { title: string; items: string[] }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 mb-8">
-    <h3 className="text-2xl font-bold text-[#F7BA00] mb-4">{title}</h3>
-    <ul className="space-y-3">
-      {items.map((item, index) => (
-        <li key={index} className="flex items-start">
-          <span className="text-[#F7BA00] font-bold text-xl ml-2">•</span>
-          <span className="text-[#4A5568]">{item}</span>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
 
 const ContentSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white text-right">
-      <div className="max-w-4xl mx-auto space-y-16">
-        <div>
-          <SectionTitle>האם לבעלי עסקים יש צורך לפרסם באינסטגרם?</SectionTitle>
-          <p className="text-xl text-[#4A5568] mb-8">
-            כן, לבעלי עסקים קטנים ובינוניים יש היום צורך גדול לנצל את הפלטפורמה של אינסטגרם לשיווק וקידום העסק שלהם.
+    <section className="py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white text-right">
+      <div className="max-w-6xl mx-auto space-y-24">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <p className="text-2xl text-gray-600 max-w-3xl mx-auto font-rubik">
+            הכוח של תוכן ויזואלי בעידן הדיגיטלי המודרני
           </p>
         </div>
 
-        <div>
-          <SectionTitle>מה הסיבות שכדאי לבעלי עסקים להשתמש באינסטגרם?</SectionTitle>
-          <ContentBlock
-            title="יתרונות השימוש באינסטגרם לעסקים"
-            items={[
-              "קהל גדול – מיליוני משתמשים פעילים מדי יום",
-              "אפשרויות שיווק מגוונות – קידום מותג, שיתוף תמונות וסרטונים, עריכת מבצעים",
-              "קשר אישי עם לקוחות",
-              "פוטנציאל ויראליות גבוה",
-              "כלים מתקדמים למדידת ביצועים וניתוח נתונים",
-              "עלויות שיווק נמוכות יחסית",
-              "נוכחות במקום בו נמצאים המתחרים"
-            ]}
-          />
+        {/* Why Instagram Section */}
+        <div className="space-y-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative">
+            <span className="relative">
+              למה אינסטגרם חיוני לעסק שלך?
+            </span>
+          </h2>
+          <div className="grid md:grid-cols-3 gap-8 mt-10">
+            {[
+              {
+                title: "חשיפה מירבית",
+                desc: "גישה למיליארד משתמשים פעילים עם אפשרויות טרגוט מתקדמות",
+                icon: "📱"
+              },
+              {
+                title: "אימפקט ויזואלי",
+                desc: "פלטפורמה אידיאלית להצגת מוצרים ושירותים בצורה מושכת",
+                icon: "🎨"
+              },
+              {
+                title: "מעורבות גבוהה",
+                desc: "אינטראקציה משמעותית עם הקהל דרך סטוריז, רילס ופוסטים",
+                icon: "❤️"
+              },
+              {
+                title: "שיווק באמצעות משפיענים",
+                desc: "שיתוף פעולה עם מובילי דעה להרחבת טווח ההגעה והאמון במותג",
+                icon: "🤝"
+              },
+              {
+                title: "כלי פרסום מתקדמים",
+                desc: "שימוש בפיצ'רים כמו IGTV, Reels ו-Shop לקידום המוצרים",
+                icon: "🛍️"
+              },
+              {
+                title: "ניתוח נתונים בזמן אמת",
+                desc: "מעקב אחרי ביצועים ושיפור מתמיד באמצעות Insights",
+                icon: "📊"
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="text-4xl mb-4">{item.icon}</div>
+                <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        <div>
-          <SectionTitle>פרסום ממומן באינסטגרם: טיפים לניצול מיטבי</SectionTitle>
-          <ContentBlock
-            title="אסטרטגיות לפרסום ממומן אפקטיבי"
-            items={[
-              "בחירת מדיה מתאימה – תמונות, וידאו, סטורי, קרוסלה או רילס",
-              "הגדרת קהל יעד רלוונטי – גיל, מיקום, העדפות והתנהגות",
-              "תכנון תקציב מושכל",
-              "מעקב אחר מדדי ביצוע – צפיות, לייקים, קליקים, המרות",
-              "אופטימיזציה מתמדת של הקמפיינים",
-              "יצירת תוכן איכותי ומעניין",
-              "שימוש בקריאות לפעולה ברורות",
-              "שילוב עם אסטרטגיית שיווק כוללת",
-              "ניתוח נתונים ושיפור מתמיד"
-            ]}
-          />
+        {/* Strategies Section */}
+        <div className="space-y-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative">
+            <span className="relative">
+              אסטרטגיות שיווק מתקדמות
+            </span>
+          </h2>
+          <div className="bg-white rounded-3xl shadow-xl p-10 space-y-8 border border-gray-100">
+            <div className="grid md:grid-cols-2 gap-12">
+              {[
+                {
+                  title: "תוכן ויזואלי אפקטיבי",
+                  items: [
+                    "סטוריז יומיים מעניינים",
+                    "רילס וירליים מושקעים",
+                    "פיד אסתטי ומקצועי",
+                    "שימוש בפילטרים ייחודיים",
+                    "תוכן משתמשים (UGC)",
+                    "תמונות וסרטונים באיכות גבוהה"
+                  ]
+                },
+                {
+                  title: "אופטימיזציה לתוצאות",
+                  items: [
+                    "ניתוח מדדי ביצוע מתקדמים",
+                    "תזמון פרסומים אופטימלי",
+                    "שימוש בהאשטאגים אפקטיביים",
+                    "אינטראקציה עם עוקבים",
+                    "קידום ממומן ממוקד",
+                    "A/B Testing לתוכן"
+                  ]
+                }
+              ].map((section, index) => (
+                <div key={index} className="space-y-6">
+                  <h3 className="text-2xl font-bold text-gray-800 border-r-4 border-yellow-500 pr-4">
+                    {section.title}
+                  </h3>
+                  <ul className="space-y-4">
+                    {section.items.map((item, idx) => (
+                      <li key={idx} className="flex items-center text-gray-700">
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
-        <div>
-          <SectionTitle>איזו פלטפורמה לפרסם בשנת 2023?</SectionTitle>
-          <ContentBlock
-            title="פלטפורמות מובילות לפרסום עסקי"
-            items={[
-              "אינסטגרם – מיליארדי משתמשים, מתמקד בתוכן ויזואלי",
-              "טיקטוק – צמיחה מהירה, מתמקד בסרטונים קצרים",
-              "יוטיוב – פרסום וידאו אפקטיבי",
-              "פייסבוק – עדיין רלוונטי עם קהל גדול",
-              "לינקדאין – מצוין לשיווק B2B",
-              "פינטרסט – מתאים לפרסום ויזואלי וקידום תוכן לקהלי נישה",
-              "טוויטר – טוב לנושאים אקטואליים ותוכן טקסטואלי"
-            ]}
-          />
-        </div>
-
-        <div className="bg-gradient-to-r from-[#F7BA00] to-[#FFA500] text-white p-8 rounded-xl shadow-lg">
-          <h2 className="text-3xl font-bold mb-4">תעבדו עם משרד דיגיטל מקצועי</h2>
-          <p className="text-xl mb-6">
-            שיתוף פעולה עם משרד דיגיטל שמכיר את השיטות החדשות ביותר יכול להוביל לתוצאות מרשימות ולהגדיל את הרווחים שלכם!
+        {/* Marketing Platforms Section */}
+        <div className="space-y-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative">
+            <span className="relative">
+              פלטפורמות שיווק מובילות 2024
+            </span>
+          </h2>
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-rubik mb-12">
+            בעידן הדיגיטלי המתפתח, חשוב להכיר את הפלטפורמות השונות ולנצל את הייחודיות של כל אחת מהן
+            כדי להגיע לקהל היעד שלכם בצורה המיטבית.
           </p>
-          <button className="bg-white text-[#F7BA00] font-bold py-2 px-6 rounded-full hover:bg-gray-100 transition-colors duration-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "אינסטגרם",
+                desc: "פלטפורמת התוכן הויזואלי המובילה עם כלי שיווק מתקדמים",
+                icon: "📸"
+              },
+              {
+                title: "טיקטוק",
+                desc: "רשת חברתית צומחת המתמקדת בתוכן וידאו קצר ודינמי",
+                icon: "🎵"
+              },
+              {
+                title: "פייסבוק",
+                desc: "הרשת החברתית הגדולה בעולם עם אפשרויות טרגוט מדויקות",
+                icon: "👥"
+              },
+              {
+                title: "לינקדאין",
+                desc: "הפלטפורמה המובילה לשיווק B2B ונטוורקינג עסקי",
+                icon: "💼"
+              },
+              {
+                title: "יוטיוב",
+                desc: "הפלטפורמה הגדולה לשיתוף וידאו עם יכולות SEO מתקדמות",
+                icon: "📺"
+              },
+              {
+                title: "טוויטר",
+                desc: "פלטפורמה למידע בזמן אמת ושיח ישיר עם הקהל",
+                icon: "🐦"
+              },
+              {
+                title: "פינטרסט",
+                desc: "פלטפורמה ויזואלית להשראה ורעיונות, מצוינת למוצרים ותחומי לייף סטייל",
+                icon: "📌"
+              },
+              {
+                title: "סנאפצ'ט",
+                desc: "רשת חברתית המתמקדת בתוכן זמני ובפילטרים ייחודיים",
+                icon: "👻"
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100 group"
+              >
+                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                  {item.icon}
+                </div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Section: Case Studies */}
+        <div className="space-y-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative">
+            <span className="relative">
+              סיפורי הצלחה
+            </span>
+          </h2>
+          <p className="text-2xl text-gray-600 max-w-4xl mx-auto font-rubik mb-12">
+            למד מהצלחות של לקוחותינו וכיצד שיווק באינסטגרם שינה את פני העסק שלהם.
+          </p>
+        </div>
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl p-12 text-center shadow-2xl">
+          <h2 className="text-4xl font-bold mb-6 font-rubik text-white">
+            מוכנים להגדיל את הנוכחות הדיגיטלית שלכם?
+          </h2>
+          <p className="text-2xl font-rubik mb-8 text-white">
+            המומחים שלנו יבנו עבורכם אסטרטגיית שיווק מקיפה באינסטגרם
+          </p>
+          <button className="bg-white text-yellow-500 text-xl font-bold py-4 px-10 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             צרו קשר עכשיו
           </button>
         </div>

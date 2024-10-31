@@ -4,8 +4,9 @@ import ContactForm from "../Portfolio/ContactForm";
 
 const ContentSection: React.FC = () => {
   return (
-    <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white text-right">
+    <section dir="rtl" className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white text-right">
       <div className="max-w-4xl mx-auto space-y-16">
+        {/* Main Content */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-5xl font-bold text-[#F7BA00] font-rubik leading-tight">
             עיצוב UI/UX - המפתח להצלחת המוצר הדיגיטלי שלכם
@@ -20,6 +21,7 @@ const ContentSection: React.FC = () => {
           </div>
         </div>
 
+        {/* UI/UX Differences */}
         <div className="space-y-8">
           <h3 className="text-3xl font-semibold text-[#F7BA00] font-rubik">
             מה ההבדל בין UX ל-UI?
@@ -40,6 +42,7 @@ const ContentSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Design Principles */}
         <div className="space-y-8">
           <h3 className="text-3xl font-semibold text-[#F7BA00] font-rubik">
             עקרונות ליצירת חווית משתמש מעולה
@@ -62,6 +65,7 @@ const ContentSection: React.FC = () => {
           </div>
         </div>
 
+        {/* Who Needs It */}
         <div className="space-y-8">
           <h3 className="text-3xl font-semibold text-[#F7BA00] font-rubik">
             מי צריך אפיון פרוייקט?
@@ -74,11 +78,6 @@ const ContentSection: React.FC = () => {
               אנחנו מתמחים בעיצוב UI/UX מוכוון משתמשים וביצועים. באמצעות תהליך מדויק ויצירתי, נפתח מוצר שיגרום למשתמשים שלכם להתמכר. מוכנים להתחיל?
             </p>
           </div>
-        </div>
-
-        <div className="bg-white p-8 rounded-xl shadow-lg">
-          <h3 className="text-3xl font-bold mb-6 text-[#F7BA00] font-rubik">צרו קשר</h3>
-          <ContactForm />
         </div>
       </div>
     </section>

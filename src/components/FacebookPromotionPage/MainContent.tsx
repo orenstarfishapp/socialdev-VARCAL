@@ -1,113 +1,111 @@
 import React from "react";
 
-const ContentSection: React.FC = () => {
+export default function ContentSection() {
   return (
-    <section className="py-20 px-4 bg-[#35023D] text-right">
-      <div className="max-w-5xl mx-auto space-y-20">
-        <div className="space-y-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-400 font-rubik leading-tight relative">
-            <span className="relative">
-              האם לבעלי עסקים יש צורך לפרסם בפייסבוק?
-              <span className="absolute bottom-0 right-0 w-full h-1 bg-sky-400 transform -skew-x-12"></span>
-            </span>
-          </h2>
-          <div className="text-xl text-gray-300 space-y-8 font-rubik leading-relaxed">
-            <p className="text-2xl font-semibold">
-              כן, לבעלי עסקים קטנים ובינוניים יש צורך משמעותי לנצל את הפלטפורמה של פייסבוק לשיווק וקידום העסק שלהם בעידן הדיגיטלי הנוכחי.
-            </p>
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <h3 className="text-3xl font-bold text-sky-400 mb-6">יתרונות הפרסום בפייסבוק:</h3>
-              <ul className="space-y-4 list-none">
-                {[
-                  "חשיפה לקהל יעד רחב ומגוון",
-                  "יכולת פילוח מדויקת של קהל היעד",
-                  "אפשרויות פרסום מגוונות (תמונות, וידאו, קרוסלות)",
-                  "מעקב ובקרה מדויקים אחר ביצועי הקמפיינים",
-                  "עלויות פרסום נמוכות יחסית לערוצים מסורתיים"
-                ].map((item, index) => (
-                  <li key={index} className="flex items-start">
-                    <span className="text-sky-400 font-bold text-2xl ml-2">•</span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+    <section className="py-24 px-4 bg-gradient-to-b from-white via-gray-50 to-white text-right">
+      <div className="max-w-6xl mx-auto space-y-24">
+        {/* Hero Section */}
+        <div className="text-center mb-20">
+          <h1 className="text-5xl font-bold text-gray-900 mb-6">
+            שיווק פייסבוק - המפתח להצלחת המוצר
+            <br />
+            הדיגיטלי שלכם
+          </h1>
+        </div>
+
+        {/* Main Content Section */}
+        <div className="space-y-12">
+          <div className="bg-white rounded-3xl shadow-xl p-10 space-y-8 border border-gray-100">
+            <div className="space-y-8 text-gray-700">
+              <p className="text-xl leading-relaxed">
+                עיצוב ממשק משתמש (UI) ועיצוב חווית משתמש (UX) הם חלק הכרחי בהצלחתו של כל מוצר דיגיטלי.
+                בסופו של דבר, כל אתר, פורטל או אפליקציה מתוכננים קודם כל עבור המשתמשים.
+              </p>
+              <p className="text-xl leading-relaxed">
+                אתם רוצים משתמשים חדשים שיחזרו למוצר שלכם שוב ושוב? אז אתם חייבים להבין אותם, וליצור
+                מוצר שיהיה להם קל להימנע מכל רעש.
+              </p>
+              <p className="text-xl leading-relaxed">
+                כדי להשיג זאת, חשוב להשתמש בכלים אוטומטיים שיעזרו לכם לנתח את התנהגות המשתמשים,
+                להבין את הצרכים שלהם ולשפר את החוויה הכוללת. השוואה בין כלי אוטומציה שונים יכולה
+                לעזור לכם לבחור את הכלי המתאים ביותר למוצר שלכם.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-400 font-rubik leading-tight relative">
+        {/* Marketing Types Section */}
+        <div className="space-y-12">
+          <h2 className="text-4xl font-bold text-yellow-500 leading-tight relative">
             <span className="relative">
-              אסטרטגיות פרסום מובילות בפייסבוק
-              <span className="absolute bottom-0 right-0 w-full h-1 bg-sky-400 transform -skew-x-12"></span>
+              מה ההבדל בין פרסום ממומן לאורגני?
             </span>
           </h2>
-          <div className="text-xl text-gray-300 space-y-8 font-rubik leading-relaxed">
-            <p className="text-2xl font-semibold">
-              כדי להצליח בפרסום בפייסבוק, חשוב לאמץ אסטרטגיות מתקדמות ויעילות:
-            </p>
-            <div className="grid md:grid-cols-2 gap-8">
-              {[
-                { title: "תוכן ויזואלי מרתק", items: ["שימוש בתמונות איכותיות", "יצירת סרטוני וידאו קצרים ומעניינים", "עיצוב גרפי מקצועי ומושך"] },
-                { title: "פרסונליזציה", items: ["התאמת המסרים לקהלי יעד ספציפיים", "שימוש בנתוני המשתמשים לפרסום ממוקד", "יצירת חוויה אישית לכל משתמש"] }
-              ].map((section, index) => (
-                <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <h3 className="text-3xl font-bold text-sky-400 mb-6">{section.title}</h3>
-                  <ul className="space-y-4 list-none">
-                    {section.items.map((item, idx) => (
-                      <li key={idx} className="flex items-start">
-                        <span className="text-sky-400 font-bold text-2xl ml-2">•</span>
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                פרסום ממומן
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                פרסום ממומן מאפשר להגיע לקהל יעד מדויק, לקבל תוצאות מהירות ולמדוד את ההצלחה של
+                הקמפיין בצורה מדויקת.
+              </p>
+            </div>
+            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+              <div className="text-4xl mb-4">🌱</div>
+              <h3 className="text-2xl font-bold text-gray-800 mb-4">
+                קידום אורגני
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                קידום אורגני בונה נוכחות לטווח ארוך, מייצר אמון ומאפשר בניית קהילה אותנטית סביב
+                המותג שלכם.
+              </p>
             </div>
           </div>
         </div>
 
-        <div className="space-y-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-sky-400 font-rubik leading-tight relative">
+        {/* Principles Section */}
+        <div className="space-y-12">
+          <h2 className="text-4xl font-bold text-yellow-500 leading-tight relative">
             <span className="relative">
-              מגמות פרסום בפייסבוק לשנת 2023
-              <span className="absolute bottom-0 right-0 w-full h-1 bg-sky-400 transform -skew-x-12"></span>
+              עקרונות ליצירת נוכחות חזקה בפייסבוק
             </span>
           </h2>
-          <div className="text-xl text-gray-300 space-y-8 font-rubik leading-relaxed">
-            <p className="text-2xl font-semibold">
-              פרסום בפייסבוק ממשיך להתפתח, והנה כמה מגמות מובילות לשנת 2023:
-            </p>
-            <div className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <ul className="space-y-6 list-none">
-                {[
-                  { title: "שימוש בבינה מלאכותית", desc: "ניצול כלי AI לאופטימיזציה של קמפיינים ויצירת תוכן" },
-                  { title: "פרסום במציאות רבודה", desc: "שילוב טכנולוגיות AR ליצירת חוויות אינטראקטיביות" },
-                  { title: "מיקוד בתוכן וידאו קצר", desc: "יצירת סרטונים קצרים ומרתקים בסגנון TikTok" },
-                  { title: "שיווק באמצעות השפעה", desc: "שיתופי פעולה עם משפיענים ומובילי דעה בפייסבוק" }
-                ].map((item, index) => (
-                  <li key={index} className="flex flex-col">
-                    <span className="text-sky-400 font-bold text-2xl mb-2">{item.title}</span>
-                    <span>{item.desc}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div className="bg-white rounded-3xl shadow-xl p-10 space-y-8 border border-gray-100">
+            {[
+              { icon: "🎯", text: "התאימו את התוכן לקהל היעד" },
+              { icon: "📅", text: "פרסמו באופן עקבי ושמרו על לוח זמנים" },
+              { icon: "🎨", text: "הקפידו על איכות התמונות והסרטונים" },
+              { icon: "⚙️", text: "השתמשו בכלי אוטומציה לניהול ותזמון פוסטים" },
+              { icon: "📊", text: "עקבו ונתחו נתונים לשיפור מתמיד" }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex items-center space-x-6 space-x-reverse hover:bg-gray-50 p-4 rounded-lg transition-all duration-300"
+              >
+                <div className="text-4xl">{item.icon}</div>
+                <p className="text-xl text-gray-700">
+                  {`${index + 1}. ${item.text}`}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-sky-400 to-sky-500 text-white p-10 rounded-3xl shadow-xl">
-          <h2 className="text-4xl font-bold mb-6 font-rubik">מוכנים להתחיל לפרסם בפייסבוק?</h2>
-          <p className="text-2xl font-rubik mb-8">
-            אנו מומחים בבניית אסטרטגיות פרסום מותאמות אישית בפייסבוק. נשמח לסייע לכם להגדיל את החשיפה ולהשיג תוצאות מרשימות. צרו איתנו קשר עוד היום!
+        {/* CTA Section */}
+        <div className="bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-3xl p-12 text-center shadow-2xl">
+          <h2 className="text-4xl font-bold mb-6 text-white">
+            מוכנים להגדיל את הנוכחות הדיגיטלית שלכם?
+          </h2>
+          <p className="text-2xl mb-8 text-white">
+            המומחים שלנו יבנו עבורכם אסטרטגיית שיווק מקיפה בפייסבוק
           </p>
-          <button className="bg-white text-sky-400 text-xl font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors duration-300">
-            צור קשר
+          <button className="bg-white text-yellow-500 text-xl font-bold py-4 px-10 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+            צרו קשר עכשיו
           </button>
         </div>
       </div>
     </section>
   );
-};
-
-export default ContentSection;
+}

@@ -7,6 +7,16 @@ interface ServiceCardProps {
   description: string;
 }
 
+interface PricingPlanProps {
+  title: string;
+  price: number;
+  features: string[];
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  accentColor: string;
+  isPopular?: boolean;
+}
+
 const ServiceCard: React.FC<ServiceCardProps> = ({ icon, title, description }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -84,17 +94,15 @@ const ServiceShowcase: React.FC = () => {
   );
 };
 
-interface PricingPlanProps {
-  title: string;
-  price: number;
-  features: string[];
-  icon: React.ComponentType<{ className?: string }>;
-  color: string;
-  accentColor: string;
-}
-
-const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon: Icon, color, accentColor }) => (
-  <div className={`flex flex-col p-8 mx-auto w-full max-w-lg text-right bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden ${color}`}>
+const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon: Icon, color, accentColor, isPopular = false }) => (
+  <div className={`flex flex-col p-8 mx-auto w-full max-w-lg text-right bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden relative ${color}`}>
+    {isPopular && (
+      <div className="absolute top-4 left-4">
+        <span className="bg-yellow-500 text-white text-sm font-bold px-4 py-1 rounded-full">
+          פופולרי
+        </span>
+      </div>
+    )}
     <div className={`absolute top-0 right-0 w-20 h-20 ${accentColor} transform rotate-45 translate-x-8 -translate-y-8`}></div>
     <div className="relative">
       <div className="flex items-center mb-6">
@@ -113,13 +121,12 @@ const PricingPlan: React.FC<PricingPlanProps> = ({ title, price, features, icon:
           </li>
         ))}
       </ul>
-      <button className={`w-full py-3 px-6 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${accentColor}`}>
+      <button className={`w-full py-3 px-6 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300 ${accentColor.replace('text', 'bg')}`}>
         בחר תוכנית
       </button>
     </div>
   </div>
 );
-
 
 const PricingPlans: React.FC = () => {
   const plans = [
@@ -130,11 +137,13 @@ const PricingPlans: React.FC = () => {
         "העלאת ועריכת שני פוסטים בשבוע",
         "סרטון אחד",
         "קידום רשת חברתית",
-        "כלי ניהול מתקדמים"
+        "כלי ניהול מתקדמים",
+        "תמיכה במייל"
       ],
       icon: Share2,
       color: "bg-gradient-to-br from-blue-50 to-blue-100",
-      accentColor: "text-blue-600"
+      accentColor: "text-blue-600",
+      isPopular: false
     },
     {
       title: "חבילת קידום וWeb",
@@ -143,11 +152,13 @@ const PricingPlans: React.FC = () => {
         "כל התכונות של החבילה הקודמת",
         "בניית אתר בטכנולוגיות חדשניות",
         "קידום חודשי",
-        "אופטימיזציה"
+        "אופטימיזציה",
+        "תמיכה בצ'אט"
       ],
       icon: Globe,
       color: "bg-gradient-to-br from-purple-50 to-purple-100",
-      accentColor: "text-purple-600"
+      accentColor: "text-purple-600",
+      isPopular: true
     },
     {
       title: "חבילת פרימיום",
@@ -157,32 +168,43 @@ const PricingPlans: React.FC = () => {
         "תמיכה 24/7",
         "דוחות חודשיים",
         "מידע מתקדם",
-        "ניתוח עסקי"
+        "ניתוח עסקי מקיף"
       ],
       icon: Zap,
       color: "bg-gradient-to-br from-yellow-50 to-yellow-100",
-      accentColor: "text-yellow-600"
+      accentColor: "text-yellow-600",
+      isPopular: false
     }
   ];
 
   return (
-    <div dir="rtl" className="py-16 px-4 mx-auto max-w-screen-xl">
-      <div className="mx-auto max-w-screen-md text-center mb-12">
-        <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-gray-900">תוכניות קידום ופיתוח אתרים</h2>
-        <p className="mb-5 font-light text-xl text-gray-600">בחר את התוכנית המושלמת להצלחת העסק הדיגיטלי שלך</p>
+    <section dir="rtl" className="py-24 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-sm font-light text-gray-600 block mb-4">
+            תוכניות במחירים אטרקטיביים
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative inline-block">
+            תוכניות קידום ופיתוח
+            <div className="absolute -bottom-2 right-0 w-full h-2 bg-yellow-200 opacity-30"></div>
+          </h2>
+          <p className="text-xl text-gray-600 mt-6 max-w-2xl mx-auto">
+            בחר את התוכנית המושלמת להצלחת העסק הדיגיטלי שלך
+          </p>
+        </div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+          {plans.map((plan, index) => (
+            <PricingPlan key={index} {...plan} />
+          ))}
+        </div>
       </div>
-      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-        {plans.map((plan, index) => (
-          <PricingPlan key={index} {...plan} />
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 
 const CombinedComponent: React.FC = () => {
   return (
-    <div>
+    <div className="bg-white">
       <ServiceShowcase />
       <PricingPlans />
     </div>
