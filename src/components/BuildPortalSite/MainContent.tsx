@@ -2,20 +2,6 @@ import React from "react";
 import { ChevronDown, Code, Server, Laptop, Zap, Database, Shield, Globe, Sparkles } from "lucide-react";
 
 const ContentSection: React.FC = () => {
-  const modernWebsitePrinciples = {
-    title: "בניית אתר אינטרנט מודרני",
-    items: [
-      "בחירת טכנולוגיות מתאימות – שימוש בפריימוורקים מודרניים כמו React, Vue.js או Angular לפיתוח חזית. Node.js או Python לצד שרת.",
-      "עיצוב ממוקד משתמש – יישום עקרונות UX/UI מתקדמים, עיצוב רספונסיבי ונגישות.",
-      "אבטחה – יישום פרוטוקולי אבטחה עדכניים, HTTPS, הגנה מפני XSS ו-CSRF.",
-      "ביצועים – אופטימיזציה של זמני טעינה, שימוש ב-lazy loading וminification של קבצים.",
-      "SEO – יישום שיטות קידום אורגני מתקדמות, כולל Schema markup ו-רובוטים meta tags.",
-      "ארכיטקטורת מיקרו-שירותים – פיתוח מודולרי המאפשר גמישות ותחזוקה קלה.",
-      "אינטגרציה עם API – שילוב שירותים חיצוניים ומערכות צד שלישי.",
-      "ניהול מצב (State Management) – שימוש בכלים כמו Redux או MobX לניהול יעיל של מצב האפליקציה.",
-    ],
-  };
-
   return (
     <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white" dir="rtl">
       <div className="max-w-6xl mx-auto space-y-24">
@@ -99,7 +85,7 @@ const ContentSection: React.FC = () => {
                   "שימוש ב-HTML, CSS, JavaScript",
                   "פריימוורקים: React, Vue.js, Angular",
                   "התמקדות בעיצוב רספונסיבי ונגישות",
-                  "אינטראקציה ישירה עם המשתמש",
+                  "אינטראקציה ישיה עם המשתמש",
                 ]
               },
               {

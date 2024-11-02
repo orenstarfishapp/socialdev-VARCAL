@@ -160,15 +160,7 @@ const ContentSection: React.FC = () => {
   </div>
 </div>
 
-O
-can you add more below that for copy paste withiout chaging much?
 
-
-I'll add another section below the existing one that continues the design focus:
-
-jsx
-
-Copy
 {/* Design Principles Section */}
 <div className="space-y-12 mt-16">
   <h2 className="text-4xl md:text-5xl font-bold text-yellow-500 font-rubik leading-tight relative">
