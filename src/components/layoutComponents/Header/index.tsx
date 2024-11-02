@@ -51,9 +51,9 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
         // - shadow-custom-black: custom shadow (defined elsewhere)
         // - duration-300: transition duration of 300ms
         // - content-center: center the content
-        style={{ backgroundColor: bgColor, minHeight: "100px" }} // Inline styles for background color and minimum height
+        style={{ backgroundColor: bgColor, minHeight: "80px" }} // Inline styles for background color and minimum height
       >
-        <div className="container mx-auto mr-1 my-0 flex-wrap pl-14 flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center lg:-between py-[12px] h-full">
+        <div className="container mx-auto mr-1 my-0.1 flex-wrap pl-14 flex-row md:flex-col xl:flex-row basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center lg:-between py-[12px] h-full">
           {/* 
             Container div with multiple Tailwind CSS classes:
             - container mx-auto: center the container horizontally
@@ -64,7 +64,7 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
             - basis-auto flex-grow max-w-[1140px] w-full shrink flex items-center lg:justify-between py-[10px] h-full: various flex properties for layout
           */}
           
-          <div className="flex-shrink-0 md:ml-5 w-[120px] h-[80px]">
+          <div className="flex-shrink-0 md:ml-1 w-[50px] h-[50px]">
             {/* 
               Logo container with:
               - flex-shrink-0: prevent shrinking
