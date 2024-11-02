@@ -13,8 +13,6 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
     "דף הבית",
     "אודותינו",
     "תיק עבודות",
-    "הדרך שלנו",
-    "צרו קשר",
   ];
 
   return (

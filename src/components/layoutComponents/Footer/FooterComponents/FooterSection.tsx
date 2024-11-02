@@ -16,7 +16,6 @@ const FooterSection: React.FC<FooterSectionProps> = ({ columns }) => { // Declar
     <div className="bg-[#35023D] text-white self-center flex-row"> 
       <div className="flex flex-col md:flex-row md:flex-wrap flex-1 justify-center flex-grow shrink my-0 mx-auto pt-[100px] pb-[50px] size-full max-w-[1140px] w-full max-md:px-5"> 
         
-        <Logo /> 
         
         {columns.map((column, index) => ( // Mapping over columns prop to render each column in the footer.
           <FooterColumn key={index} title={column.title} items={column.items} /> 

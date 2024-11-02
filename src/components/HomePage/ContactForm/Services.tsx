@@ -1,55 +1,86 @@
 import React from "react";
-import ServiceCard from "../ServiceSection/ServiceCard";
-import OverviewImg1 from "../../../assets/images/overview-icon1.png.png";
-import OverviewImg2 from "../../../assets/images/overview-icon2.png.png";
-import OverviewImg3 from "../../../assets/images/overview-icon3.png.png";
+import { Computer, Search, Smartphone } from "lucide-react";
 
 interface Service {
   title: string;
-  description: string;
-  imageUrl: string;
-  backgroundColor: string;
+  description: string[];
+  icon: React.ReactNode;
+  iconBgColor: string;
 }
 
 const services: Service[] = [
   {
-    title: "קידום בפייסבוק ויצירת תוכן",
-    description:
-      "אנו נדאג לקידום ממוקד בפייסבוק שימשוך את קהל היעד שלך ויביא לתוצאות מיטביות. ניצור עבורך תוכן איכותי ומקצועי, נבצע ניהול קמפיינים, ונבנה עבורך אסטרטגיות תוכן שמותאמות לצרכים העסקיים שלך. כל זה בכדי להבטיח שהלקוחות הפוטנציאליים שלך יוכלו להתחבר למותג שלך ולהפוך ללקוחות נאמנים.",
-    imageUrl: OverviewImg3,
-    backgroundColor: "bg-amber-100",
+    title: "פיתוח אתרים",
+    description: [
+      "בניית אתרים מותאמים אישית עם",
+      "טכנולוגיות מתקדמות",
+      "עיצוב מתואם אישית",
+      "חוויות משתמש מתקדמת",
+      "המרות למכירות"
+    ],
+    icon: <Computer className="w-8 h-8 text-amber-500" />,
+    iconBgColor: "bg-amber-100"
   },
   {
-    title: "קידום באינסטגרם",
-    description:
-      "קידום העסק שלך באינסטגרם באמצעות אסטרטגיות ממוקדות שיביאו לחשיפה רחבה יותר. ניצור עבורך פוסטים איכותיים ומעוררי עניין, נבצע אופטימיזציה למודעות וננהל את הקמפיינים שלך כדי להבטיח שהמותג שלך יזכה להכרה וירחיב את קהל הלקוחות. הקידום שלנו באינסטגרם מותאם במיוחד כדי למשוך את תשומת הלב של הקהל הנכון ולהוביל לתוצאות מצוינות.",
-    imageUrl: OverviewImg2,
-    backgroundColor: "bg-rose-200",
+    title: "שיווק דיגיטלי",
+    description: [
+      "אסטרטגיות שיווק מתקדמות ברשתות",
+      "החברתיות",
+      "ניהול רשתות חברתיות",
+      "קמפיינים ממומנים",
+      "אופטימיזציה מתמדת"
+    ],
+    icon: <Smartphone className="w-8 h-8 text-amber-500" />,
+    iconBgColor: "bg-amber-100"
   },
   {
-    title: "בניית אתר אינטרנט",
-    description:
-      "אנו מתמחים בבניית אתרים מותאמים אישית, שמותאמים במיוחד לצרכים הייחודיים של העסק שלך. האתר שנבנה עבורך יכלול עיצוב מקצועי, חוויית משתמש מעולה, ואופטימיזציה כדי להבטיח שהלקוחות ימצאו אותך בקלות. עם אתר אינטרנט יעיל, העסק שלך יזכה לחשיפה גבוהה יותר ויגדיל את ההמרות.",
-    imageUrl: OverviewImg1,
-    backgroundColor: "bg-[#D7CCD8]",
-  },
+    title: "קידום אתרים",
+    description: [
+      "שיפור הדירוג שלך במנוע החיפוש",
+      "מחקר מילות מפתח",
+      "אופטימיזציית תוכן",
+      "בניית קישורים"
+    ],
+    icon: <Search className="w-8 h-8 text-amber-500" />,
+    iconBgColor: "bg-amber-100"
+  }
 ];
+
+const ServiceCard: React.FC<{ service: Service }> = ({ service }) => (
+  <div className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+    <div className="flex flex-col items-center">
+      <div className={`${service.iconBgColor} p-4 rounded-full mb-6 transition-transform duration-300 hover:scale-110`}>
+        {service.icon}
+      </div>
+      <h3 className="text-2xl font-bold text-amber-500 mb-6 hover:text-amber-600 transition-colors duration-300">
+        {service.title}
+      </h3>
+      <ul className="space-y-3 text-right w-full">
+        {service.description.map((item, index) => (
+          <li key={index} className="text-gray-600 hover:text-gray-800 transition-colors duration-200 text-lg">
+            {item}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+);
 
 const Services: React.FC = () => {
   return (
-    <section className="flex flex-col justify-center items-center px-4 py-16 w-full text-center bg-gray-50">
-      <div className="max-w-6xl w-full">
-        <h2 className="text-5xl font-bold text-sky-400 mb-4">
-          השותף הדיגיטלי בשירות המלא שלך
-        </h2>
-        <p className="text-lg text-neutral-500 mb-12">
-          לא משנה מה אתה צריך, דאגנו לך:
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold mb-6 text-amber-500 hover:text-amber-600 transition-colors duration-300">
+            השירותים שלנו
+          </h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            פתרונות דיגיטליים מקצועיים לעסקים מתקדמים
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <div key={index} className="col-span-1">
-              <ServiceCard {...service} />
-            </div>
+            <ServiceCard key={index} service={service} />
           ))}
         </div>
       </div>

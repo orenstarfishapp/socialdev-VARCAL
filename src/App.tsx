@@ -30,7 +30,6 @@ const App: React.FC = () => {
           <Route path="/אודותינו" element={<AboutPage />} />
           <Route path="/תיק עבודות" element={<PortfolioPage />} />
           <Route path="/הדרך שלנו" element={<OurWayPage />} />
-          <Route path="/צרו קשר" element={<ContactPage />} />
           <Route path="/בניית אתרים" element={<WebsiteConstruction />} />
           <Route
             path="/בניית אתר תדמית"

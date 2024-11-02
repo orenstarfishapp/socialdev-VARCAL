@@ -1,84 +1,45 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useState } from "react";
-import HeroBg from "../../assets/images/Rectangle.png";
+import React from "react";
 import HeroImage from "../../assets/images/hero.png";
 import ReactTypingEffect from "react-typing-effect";
 
-const Hero: React.FC = () => {
+const Hero = () => {
   const strings = [
     "קידום מותאם אישית: אתר אינטרנט",
     "קידום מותאם אישית: אינסטגרם",
     "קידום מותאם אישית: פייסבוק",
-    "תתחיל כאן ותן לעסק שלך להבלט",
+    "תתחיל כאן ותן לעסק שלך לבלוט",
   ];
 
-  const [displayedString, setDisplayedString] = useState("");
-  const [currentStringIndex, setCurrentStringIndex] = useState(0);
-  const [charIndex, setCharIndex] = useState(0);
-  const typingSpeed = 100;
-  const pauseBetweenStrings = 1500;
-
-  useEffect(() => {
-    if (charIndex < strings[currentStringIndex].length) {
-      const timeout = setTimeout(() => {
-        setDisplayedString(
-          (prev) => prev + strings[currentStringIndex][charIndex]
-        );
-        setCharIndex((prevCharIndex) => prevCharIndex + 1);
-      }, typingSpeed);
-      return () => clearTimeout(timeout);
-    } else {
-      // Pause after string is fully displayed
-      const timeout = setTimeout(() => {
-        setDisplayedString(""); // Clear the current string
-        setCharIndex(0); // Reset char index
-        setCurrentStringIndex((prevIndex) => (prevIndex + 1) % strings.length); // Move to next string
-      }, pauseBetweenStrings);
-      return () => clearTimeout(timeout);
-    }
-  }, [charIndex, currentStringIndex, strings]);
   return (
     <section className="flex bg-custom-gradient shine relative flex-col pt-52 w-full min-h-[989px] max-md:pt-24 max-md:max-w-full">
-      {/* <img
-        loading="lazy"
-        src={HeroBg}
-        className="object-cover  absolute inset-0 size-full"
-        alt="Background image"
-      /> */}
-      <div className="flex  relative flex-col justify-center w-full text-6xl font-bold leading-tight text-center text-white max-md:max-w-full max-md:text-4xl">
+      <div className="flex relative flex-col justify-center w-full text-6xl font-bold leading-tight text-center text-white max-md:max-w-full max-md:text-4xl">
         <div className="flex flex-col mt-8 flex-1 w-full max-md:max-w-full max-md:text-4xl">
           <h2 className="[text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]">
             איכות ללא פשרות
           </h2>
         </div>
       </div>
-      <div className="flex relative flex-col justify-center   h-[5rem] md:h-[11rem] md:pb-11 mt-5 w-full text-2xl leading-none text-center text-white max-md:max-w-full">
-        <div className="flex flex-col flex-1 w-full max-md:max-w-full">
-          <div className="flex flex-col items-center px-20 pt-2 w-full max-md:px-5 max-md:max-w-full">
-            <div className="flex flex-col max-w-full">
-              <div className="text-center">
-                <ReactTypingEffect
-                  text={strings}
-                  eraseSpeed={30}
-                  speed={50}
-                  typingDelay={500}
-                  eraseDelay={2000}
-                  className={`flex flex-col text-[#ffcd3c] font-bold textShadow gap-3`}
-                />
-              </div>
-              {/* <div className="self-center">
-                <span className="grow shrink font-bold">
-                  קידום מותאם אישית:
-                </span>
-                אתר אינטרנט, אינסטגרם ופייסבוק.
-              </div> */}
-              <div className="flex flex-wrap gap-2.5">
-                {/* <div className="flex-auto">תתחיל כאן ותן לעסק שלך לבלוט.</div> */}
-              </div>
-            </div>
-          </div>
+      
+      <div className="relative flex justify-center mt-5 w-full">
+        <div className="h-16 flex items-center justify-center">
+          <ReactTypingEffect
+            text={strings}
+            eraseSpeed={30}
+            speed={50}
+            typingDelay={500}
+            eraseDelay={2000}
+            className="text-[#ffcd3c] font-bold text-2xl textShadow"
+            displayTextRenderer={(text: string) => {
+              return (
+                <div className="min-h-[2em] flex items-center justify-center">
+                  {text}
+                </div>
+              );
+            }}
+          />
         </div>
       </div>
+
       <div className="relative justify-center w-full max-md:max-w-full">
         <div className="w-full mt-10 max-md:max-w-full">
           <div className="flex items-center w-full justify-center max-md:px-5 max-md:max-w-full">
@@ -86,7 +47,7 @@ const Hero: React.FC = () => {
               href="#"
               className="justify-center items-start px-11 pt-5 pb-4 bg-yellow-500 rounded-[50px] max-md:px-5"
             >
-              <div className=" flex gap-1.5 justify-center">
+              <div className="flex gap-1.5 justify-center">
                 <div className="text-xl font-medium leading-none text-center text-white min-w-[94px]">
                   התחל כאן
                 </div>
@@ -109,6 +70,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
+
       <div className="flex relative flex-col justify-center pt-20 mt-5 w-full max-md:max-w-full">
         <div className="flex flex-col flex-1 justify-center items-center w-full max-md:px-5 max-md:max-w-full">
           <img
