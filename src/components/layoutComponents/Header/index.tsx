@@ -87,18 +87,16 @@ const Header: React.FC<HeaderProps> = ({ navItems }) => {
                   - object-contain: contain the object within the container
                   - full width and height
                 */}
-                <svg
-                  className={`text-white h-[6rem] w-24`} // SVG styling with Tailwind classes
-                  viewBox="0 0 100 100" // Viewbox for SVG scaling
-                  xmlns="http://www.w3.org/2000/svg" // XML namespace
-                >
+<svg
+  className={`text-white h-[6rem] w-24 -mt-6`} // Added -mt-8 to move it up
+  viewBox="0 0 100 100"
+  xmlns="http://www.w3.org/2000/svg"
+>
                   <path
-                    className={`animate-bounce animate-duration-[4000ms]`} // Apply bounce animation with 4s duration
                     d="M20,80 Q40,40 60,20 Q80,40 60,80 Z" // SVG path definition
                     fill="#ff0000" // Red fill color
                   />
                   <path
-                    className={`animate-bounce animate-duration-[3900ms]`} // Apply bounce animation with 3.9s duration
                     d="M40,80 Q60,40 80,20 Q100,40 80,80 Z" // Another SVG path definition
                     fill="#cccccc" // Gray fill color
                   />
