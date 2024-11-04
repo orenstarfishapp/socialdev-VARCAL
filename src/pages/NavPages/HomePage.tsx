@@ -1,6 +1,6 @@
 import React from "react";
 import Hero from "../../components/HomePage/Hero";
-
+import ServiceTrial from "../../components/HomePage/ServiceTrial";
 import ContactForm from "../../components/HomePage/ContactForm";
 import ServiceCards from "../../components/HomePage/ServiceCards/ServiceCards";
 import FeatureCards from "../../components/HomePage/ServiceCards/FeatureCards/FeatureCards";
@@ -19,6 +19,7 @@ const HomePage: React.FC = () => {
       <ServiceTitle />
       <ServiceCards />
       <FeatureCards />
+      <ServiceTrial />
       <ServiceShowcase /> 
       <ContactForm />
       <div className="flex flex-nowrap mx-auto w-full px-[10px]">

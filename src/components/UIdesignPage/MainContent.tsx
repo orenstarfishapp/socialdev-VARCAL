@@ -9,10 +9,10 @@ const ContentSection: React.FC = () => {
         <div className="text-center mb-20 relative">
           <div className="absolute inset-0 bg-yellow-100 opacity-10 rounded-full blur-3xl transform animate-pulse"></div>
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 font-heebo mb-6 relative">
-            שיווק דיגיטלי מתקדם
+            חווית משתמש מתקדמת
           </h1>
           <p className="text-2xl md:text-3xl text-gray-600 max-w-3xl mx-auto font-heebo">
-            המדריך המקיף לשיווק ברשתות החברתיות
+            המדריך המקיף לעיצוב ממשק משתמש
           </p>
           <div className="mt-8 animate-bounce">
             <ChevronDown className="mx-auto" size={32} />
