@@ -86,7 +86,7 @@ const TrialOfferSection = () => {
         <div className="text-center mb-20 relative">
           <div className="absolute inset-0 bg-yellow-100 opacity-10 rounded-full blur-3xl transform animate-pulse"></div>
           <h1 className="text-5xl md:text-7xl font-bold text-gray-900 font-heebo mb-6 relative">
-            פיתוח חווית משתמש מתקדמת
+            קידום סושיאל אתר במיוחד בשביל עסקים קטנים
           </h1>
           <p className="text-2xl md:text-3xl text-gray-600 max-w-3xl mx-auto font-heebo">
             עיצוב ופיתוח ממשקים חכמים
