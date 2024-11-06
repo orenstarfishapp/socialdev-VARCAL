@@ -3,16 +3,23 @@ App {
 }
 
 .App-logo {
-  width: 50px; /* Fixed width */
-  height: 50px; /* Fixed height */
-  max-width: none; /* Remove max-width to prevent scaling */
-  margin: 10px 0; /* Adjust margin if needed */
+  width: 50px;
+  height: 50px;
+  max-width: none;
+  margin: 10px 0;
   pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+/* Hide logo on mobile */
+@media screen and (max-width: 768px) {
+  .App-logo {
+    display: none !important; /* Force hide on mobile */
   }
 }
 
